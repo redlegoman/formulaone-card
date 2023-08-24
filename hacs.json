@@ -1,7 +1,6 @@
 {
-    "name": "Formula One Card",
-    "filename": "formulaone-card.js",
-    "render_readme": true,
-    "content_in_root": true
-  }
-  
+    "name": "rlm-formulaone-card",
+    "domains": "rlm-formulaone-card",
+    "filename": "formulaone-card.js"
+
+}
