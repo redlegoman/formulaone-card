@@ -1,3 +1,8 @@
-npm init -y
-npm install webpack webpack-cli --save-dev
+#npm init -y
+#npm install webpack webpack-cli --save-dev
+
+
 npx webpack --config webpack.config.js
+
+scp -P 223 formulaone-card.js.gz root@hass:/config/www/community/formulaone-card/. 
+scp -P 223 formulaone-card.js root@hass:/config/www/community/formulaone-card/.
