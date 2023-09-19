@@ -148,7 +148,7 @@ export const renderHeader = (card: BaseCard, race: Race, preventClick = false): 
         hasHold: hasAction(card.config.actions?.hold_action),
         hasDoubleClick: hasAction(card.config.actions?.double_tap_action),
       })} class="${(hasConfigAction ? ' clickable' : null)}" />`;
-    const raceName = html`<h2 class="${(card.config.f1_font ? 'formulaone-font' : '')}"><img height="25" src="${getCountryFlagByName(card, race.Circuit.Location.country)}">&nbsp;  ${race.round} :  ${race.raceName}</h2>`;
+    const raceName = html`<p class="${(card.config.f1_font ? 'formulaone-font' : '')}"><img height="25" src="${getCountryFlagByName(card, race.Circuit.Location.country)}">&nbsp;  ${race.round} :  ${race.raceName}</p>`;
     
     return html`${(card.config.card_type == FormulaOneCardType.Countdown ? html`` : raceName)} ${(card.config.hide_tracklayout ? html`` : imageHtml)}<br>`;
 }
@@ -206,9 +206,9 @@ export const renderLastYearsResults = (config: FormulaOneCardConfig, raceData: R
                 <tr>
                     <td class="text-center">
                         <h1 class="${(config.f1_font ? 'formulaone-font' : '')}">${new Date(raceData.date).getFullYear()}</h1>
-                        <h2 class="${(config.f1_font ? 'formulaone-font' : '')}">
+                        <p class="${(config.f1_font ? 'formulaone-font' : '')}">
                             <ha-icon slot="icon" icon="mdi:trophy-outline"></ha-icon> ${result?.Driver.givenName} ${result?.Driver.familyName} (${result?.Constructor.name})
-                        </h2>
+                        </p>
                         <h3 class="${(config.f1_font ? 'formulaone-font' : '')}">
                             <ha-icon slot="icon" icon="mdi:timer-outline"></ha-icon> ${fastest?.Driver.givenName} ${fastest?.Driver.familyName} (${fastest?.FastestLap?.Time.time})
                         </h3>

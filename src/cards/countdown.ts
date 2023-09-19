@@ -45,7 +45,8 @@ export default class Countdown extends BaseCard {
 
     renderHeader(race: Race, raceDateTime: Date): HTMLTemplateResult {        
         return this.config.show_raceinfo ? 
-            html`<table><tr><td colspan="5">${renderHeader(this, race, true)}</td></tr>
+            //html`<table><tr><td colspan="5">${renderHeader(this, race, true)}</td></tr>
+            html`<table><tr><td colspan="1">${renderHeader(this, race, true)}</td></tr>
             ${renderRaceInfo(this, race, raceDateTime)}</table>`
             : null;
     }
@@ -97,16 +98,12 @@ export default class Countdown extends BaseCard {
                                     hasHold: hasAction(this.config.actions?.hold_action),
                                     hasDoubleClick: hasAction(this.config.actions?.double_tap_action),
                                 })} class="${(hasConfigAction ? 'clickable' : null)}">
-                                <tr>
                                     <td>
-                                        <h2 class="${(this.config.f1_font ? 'formulaone-font' : '')}"><img height="25" src="${getCountryFlagByName(this, nextRace.Circuit.Location.country)}">&nbsp;&nbsp;  ${nextRace.round} :  ${nextRace.raceName}</h2>
+                                        <p class="${(this.config.f1_font ? 'formulaone-font' : '')}"><img height="25" src="${getCountryFlagByName(this, nextRace.Circuit.Location.country)}">&nbsp;&nbsp;  ${nextRace.round} :  ${nextRace.raceName}</p>
                                     </td>
-                                </tr>
-                                <tr>
                                     <td class="text-center">
-                                        <h1 class="${(this.config.f1_font ? 'formulaone-font' : '')}">${asyncReplace(timer)}</h1>
+                                        <p class="${(this.config.f1_font ? 'formulaone-font' : '')}">${asyncReplace(timer)}</p>
                                     </td>
-                                </tr>
                                 ${(
                                     Array.isArray(this.config.countdown_type) && this.config.countdown_type.length > 1 ?
                                         html`<tr>
